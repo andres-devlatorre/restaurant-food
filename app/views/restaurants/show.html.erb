@@ -1,6 +1,11 @@
-<h1>Show</h1>
+<div class="container d-flex justify-content-between align-items-center pt-3">
+  <h1 class="container">Show</h1>
+  <%= link_to 'Back', restaurants_path, class: "btn btn-primary" %>
+</div>
 
-<div class="container d-flex justify-content-between align-items-center border p2">
+<hr>
+
+<div class="container d-flex justify-content-between align-items-center border p2 rounded">
   <%= @restaurant.name %>
   <%= @restaurant.address %>
   <div class="p-1">

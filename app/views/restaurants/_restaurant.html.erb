@@ -1,11 +1,13 @@
-<div class="container d-flex justify-content-between align-items-center border p2">
-  <%= link_to restaurant.name %>
-  <div class="p-1">
-    <%= link_to restaurant_path(restaurant), data: {turbo_method: :delete}, class: "btn btn-danger" do %>
-    <i class="fa-solid fa-trash"></i>
-    <% end %>
-    <%= link_to edit_restaurant_path(restaurant), class: "btn btn-warning" do %>
-    <i class="fa-solid fa-pencil"></i>
-    <% end %>
+<%= turbo_frame_tag restaurant do %>
+  <div class="container d-flex justify-content-between align-items-center border p2 mb-2 rounded">
+    <%= link_to restaurant.name, restaurant_path(restaurant), class: "text-decoration-none", data: { turbo_frame: '_top' } %>
+    <div class="p-1">
+      <%= link_to restaurant_path(restaurant), data: {turbo_method: :delete}, class: "btn btn-danger" do %>
+        <i class="fa-solid fa-trash"></i>
+      <% end %>
+      <%= link_to edit_restaurant_path(restaurant), class: "btn btn-warning" do %>
+        <i class="fa-solid fa-pencil"></i>
+      <% end %>
+    </div>
   </div>
-</div>
+<% end %>
