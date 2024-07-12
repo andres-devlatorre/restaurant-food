@@ -1,5 +1,7 @@
-<%= simple_form_for restaurant do |f| %>
-<%= f.input :name %>
-<%= f.input :address %>
-<%= f.button :submit %>
-<% end %>
+
+  <%= simple_form_for restaurant, html: {class: 'container d-flex justify-content-between align-items-center'} do |f| %>
+    <div class="flex-grow-1 me-2"><%= f.input :name %></div>
+    <div class="flex-grow-1"><%= f.input :address %></div>
+    <%= f.submit restaurant.new_record? ? 'Create' : 'Save', class: "btn btn-success ms-2 mt-3 m-1" %>
+    <%= link_to 'Close', restaurants_path, class: 'btn btn-secondary mt-3 m-1' %>
+  <% end %>
